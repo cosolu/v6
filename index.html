@@ -33,16 +33,30 @@
         <a href="ftp://maintenance.cosoluce.fr/tools/supernova/Bootstrapper/" target="_blank">Utiliser EDGE ou IE pour prendre la version ...WIN10_prod.exe</a>
         <hr>
 
-        <p>En cas d'erreur sur la mise à jour de parme:</p>
-        <a href="https://www.microsoft.com/fr-FR/download/confirmation.aspx?id=42642" target="_blank">.NET Framework 4.5.2 pour Windows Server 2012 R2 et Windows 8.1 SP1</a>
-
-
         <p>Vérification de la version de PowerShell: $psversiontable.psversion</p>
         <br>
         <p>Erreur Parme</p>
         <p>Afin de valider l’installation des cosopack Parme et Mauve_Parme, pourriez-vous installer l’outil de contrôle DADSU manuellement</p>
         <a href="http://www.gip-mds.fr/Outil/DADSU-CTL-V01X15.exe" target="_blank">outil de contrôle DADSU</a>
         <p>Redonner les droits "TOUT LE MONDE" au dossier "C:\Program Files (x86)\Cosoluce"</p>
+        <hr>
+
+        <p>Création du dossier hors ligne pour la mise à jour en V6</p>
+        <pre>
+            Créer un dossier C:\temp
+            Lancer PowerShell en tant qu'administrateur puis taper la commande: 
+            Set-ExecutionPolicy RemoteSigned
+            Répondre T ou O     (tout ou Oui) puis taper:
+            cd c:\temp
+            ./New-ColorisInstallationMedia.ps1 c:\temp
+
+            Une fois le téléchargement terminé, recopier le dossier "CosoluceInstaller" (et tout son contenu) dans le dossier SOURCES partagé
+            D'un poste client, choisir le bon fichier "Supernova.Client.Bootstrapper_1.XX.XX_winXX_prod"
+        </pre>
+
+        <p>Mise à jour des paramètres de paie pour la V5</p>
+        <p>Téléchargez le fichier suivant à exécuter directement sur le(s) poste(s) servant à réaliser la paie en V5</p>
+        <a href="COLORIS_V50_SP_P50116.exe" target="_blank">.mise à jour des paramètres de paies V5</a>
 
 
 
