@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>MaJ SERVEUR V6</title>
+        <meta charset="utf-8">
+        <meta name="description" content="MaJ V6">
+        <meta name="author" content="John Doe">
+    </head>
+
+    <body>
+        <h1>MaJ V6</h1>
+        <!--Windows 2008, 2008 R2, Windows 7 SP1-->
+        <h2>Windows Server 2008 R2 et Windows 7 SP1</h2>
+        <ol>
+            <li>
+                <a href="https://www.microsoft.com/fr-FR/download/confirmation.aspx?id=42642" target="_blank">.NET Framework 4.5.2 pour Windows Server 2008 R2 et Windows 7 SP1</a>
+            </li>
+            <li>
+                <a href="https://go.microsoft.com/fwlink/?linkid=839523" target="_blank">installation WMF 5.1 pour Windows Server 2008 R2 et Windows 7 SP1</a>
+            </li>
+            <li>
+                <a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=54616" target="_blank">POUR WINDOWS 7 32 BITS UNIQUEMENT: Installation WMF 5.1 x86</a>
+            </li>
+            <li>
+                <a href="ftp://maintenance.cosoluce.fr/tools/supernova/Bootstrapper/" target="_blank">Utiliser EDGE ou IE pour prendre la version ...WIN7_prod.exe</a>
+            </li>
+        </ol>
+        <hr>
+        <!--Windows 2012, 2012 R2, Windows 8.1-->
+        <h2>Windows Server 2012 R2 et Windows 8.1</h2>
+        <ol>
+            <li>
+                <a href="https://www.microsoft.com/fr-FR/download/confirmation.aspx?id=42642" target="_blank">.NET Framework 4.5.2 pour Windows Server 2012 R2 et Windows 8.1 SP1</a>
+            </li>
+            <li>
+                <a href="https://go.microsoft.com/fwlink/?linkid=839516" target="_blank">installation WMF 5.1 pour Windows Server 2012 R2 et Windows 8.1 SP1</a>
+            </li>
+            <li>
+                <a href="https://go.microsoft.com/fwlink/?linkid=839513" target="_blank">installation WMF 5.1 pour Windows Server 2012</a>
+            </li>
+            <li>
+                <a href="ftp://maintenance.cosoluce.fr/tools/supernova/Bootstrapper/" target="_blank">Utiliser EDGE ou IE pour prendre la version ...WIN81_prod.exe</a>
+            </li>
+        </ol>
+        <hr>
+        <!--Windows 2016, 2019, Windows 10-->
+        <h2>Windows Server 2016, 2019 et Windows 10</h2>
+        <ol>
+            <li>
+                <a href="ftp://maintenance.cosoluce.fr/tools/supernova/Bootstrapper/" target="_blank">Utiliser EDGE ou IE pour prendre la version ...WIN10_prod.exe</a>
+            </li>
+        </ol>
+        <hr>
+
+        <P>
+            <h2>Procédure</h2>
+            <ul>
+                <li>MaJ OS (SERVEUR et POSTES)</li>
+                <li>EXCEPTION ANTIVIRUS (si Bit Defender)</li>
+                <li>WMF 5.1</li>
+                <li>VERIFIER SAUVEGARDE COSOLUCE</li>
+                <li>VERIFIER SAUVEGARDE SERVEUR SI SGI</li>
+                <li>SUSPENDRE TACHES PLANIFIEES de 13H00</li>
+                <li>TOUT LE MONDE DOIT QUITTER NUANCE (stop et start SQL COSOLUCE)</li>
+                <li>MaJ V6 SERVEUR</li>
+                <li>LANCER NUANCE POUR METTRE A JOUR LA BASE</li>
+                <li>REMETTRE LES TACHES PLANIFIEES</li>
+                <li>MaJ V6 POSTES</li>
+            </ul>
+        </P>
+
+        <hr>
+        <h2>Vérification de la version de PowerShell:</h2>
+            <p> $psversiontable.psversion</p>
+        <br>
+        <h2>Erreur Accès refusé</h2>
+            <p>Afin de valider l’installation des packs Parme et Mauve_Parme, veuillez installer l’outil de contrôle DADSU manuellement:</p>
+                <a href="http://www.gip-mds.fr/Outil/DADSU-CTL-V01X15.exe" target="_blank">Outil de contrôle DADSU</a>
+            <p>et redonner les droits "TOUT LE MONDE" au dossier "C:\Program Files (x86)\Cosoluce"</p>
+        <hr>
+
+        <h2>Création du dossier hors ligne pour la mise à jour en V6</h2>
+            <pre>
+            Créer un dossier C:\temp
+            Lancer PowerShell en tant qu'administrateur puis taper la commande: 
+            Set-ExecutionPolicy RemoteSigned
+            Répondre T ou O     (tout ou Oui) puis taper:
+            cd c:\temp
+            ./New-ColorisInstallationMedia.ps1 c:\temp
+            <br>
+            <a href="New-ColorisInstallationMedia.ps1" target="_blank">Script PowerShell</a>
+
+            Une fois le téléchargement terminé, recopier le dossier "CosoluceInstaller" (et tout son contenu) dans le dossier SOURCES partagé
+            D'un poste client, choisir le bon fichier "Supernova.Client.Bootstrapper_1.XX.XX_winXX_prod"
+            </pre>
+
+        <h3>Mise à jour des paramètres de paie pour la V5</h3>
+            <p>Téléchargez le fichier suivant à exécuter directement sur le(s) poste(s) servant à réaliser la paie en V5</p>
+                <a href="COLORIS_V50_SP_P50116.exe" target="_blank">.mise à jour des paramètres de paies V5</a>
+
+        <hr>
+        
+        
+
+    </body>
+
+</html>
